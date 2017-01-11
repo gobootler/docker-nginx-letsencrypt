@@ -1,4 +1,5 @@
 FROM nginx:stable
+MAINTAINER Peter Piekarczyk
 
 RUN echo "deb http://ftp.debian.org/debian jessie-backports main" > /etc/apt/sources.list.d/jessie.backports.list
 
@@ -9,6 +10,7 @@ RUN set -x \
     cron \
     dnsmasq \
     wget \
+    vim \
     && apt-get install --no-install-recommends -yqq certbot -t jessie-backports \
     && wget https://github.com/Supervisor/supervisor/archive/${SUPERVISOR_VERSION}.tar.gz \
     && tar -xvf ${SUPERVISOR_VERSION}.tar.gz \
