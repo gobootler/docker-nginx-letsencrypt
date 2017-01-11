@@ -23,6 +23,7 @@ COPY supervisord.conf /etc/supervisord.conf
 COPY certs.sh /
 COPY bootstrap.sh /
 COPY default.conf /etc/nginx/conf.d/default.conf
+COPY service.conf /etc/nginx/conf.d/service.conf
 
 RUN mkdir /le-root
 
